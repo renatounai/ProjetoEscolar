@@ -1,8 +1,8 @@
-package repositories;
+package com.rc.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import model.Disciplina;
+import com.rc.model.Disciplina;
 
 public interface DisciplinaRepository extends JpaRepository<Disciplina, Integer> {
 

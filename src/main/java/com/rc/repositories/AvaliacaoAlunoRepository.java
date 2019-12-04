@@ -1,8 +1,8 @@
-package repositories;
+package com.rc.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import model.AvaliacaoAluno;
+import com.rc.model.AvaliacaoAluno;
 
 public interface AvaliacaoAlunoRepository extends JpaRepository<AvaliacaoAluno, Integer> {
 
