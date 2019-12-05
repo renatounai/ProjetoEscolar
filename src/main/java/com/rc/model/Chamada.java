@@ -26,6 +26,7 @@ public class Chamada extends ObjetoPadrao {
 	
 	private Integer aula;
 	
+	@ManyToOne
 	private Semestre semestre;
 	
 	@ManyToOne

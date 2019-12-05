@@ -1,6 +1,7 @@
 package com.rc.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,8 +14,20 @@ public class PessoaController {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
-	@GetMapping("/pessoa/:id")
-	private Pessoa pessoa(int id) {
-		return pessoaRepository.findById(id).get();
+	@Transactional()
+	@GetMapping("/pessoa/{id}")
+	private Pessoa pessoa(String id) {
+		System.out.println("Id: " + pessoaRepository);
+		return pessoaRepository.findById(Integer.parseInt(id)).get();
+	}
+	
+	@Transactional()
+	@GetMapping("/teste")
+	public String teste() {
+		Pessoa pessoa = new Pessoa();
+		pessoa.setName("Renato");
+		pessoaRepository.save(pessoa);
+		System.out.println("salvei o miserável!");
+		return "nosaaaaaaaa!";
 	}
 }
